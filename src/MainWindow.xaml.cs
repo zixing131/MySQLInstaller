@@ -462,7 +462,7 @@ namespace MySQLInstaller
                 var msyqldb = new MySQLDBHelp(connectstr);
                 ret = msyqldb.getMySqlCom("create user '" + mysqluser + "'@'%' identified by '" + mysqlpass + "';");
                 addProcessAction(1);
-                ret = msyqldb.getMySqlCom("grant all privileges on zixingtest.* to '" + mysqluser + "'@'%' identified by '" + mysqlpass + "' with grant option;");
+                ret = msyqldb.getMySqlCom("grant all privileges on "+ ComConst.mydbname + ".* to '" + mysqluser + "'@'%' identified by '" + mysqlpass + "' with grant option;");
                 addProcessAction(1);
                 ret = msyqldb.getMySqlCom("flush privileges;");
 
